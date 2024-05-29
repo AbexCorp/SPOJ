@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 class Program
 {
     public static void Main()
     {
+        StringBuilder sb = new StringBuilder();
         SortedDictionary<int, Number> sortedNumbers = new SortedDictionary<int, Number>();
 
         Console.ReadLine();
@@ -26,8 +28,9 @@ class Program
         foreach(var x in ordered)
         {
             for(int i = 0; i < x.Value.amount; i++)
-                Console.Write($"{x.Key} ");
+                sb.Append($"{x.Key} ");
         }
+        Console.WriteLine(sb.ToString().Trim());
     }
 }
 public class Number
